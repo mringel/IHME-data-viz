@@ -1,0 +1,11 @@
+{
+  "name": "ihme-obesity-data-viz",
+  "version": "1.0.0",
+  "description": "A visualization for IHME's Global Burden of Disease Obesity data set.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Matthew Ringel",
+  "license": "ISC"
+}
