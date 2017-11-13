@@ -6,10 +6,11 @@ countryChart.interactive = function() {
       cHeight = 1,
       padding = 50,
       cChartDivTag = '.countrychart',
-      xScale,
-      yScale,
+      cxScale,
+      cyScale,
       cAgeGroupId = '38',
-      cCountry = "";
+      cCountry = "",
+      cData;
 
   var init = function(divTag, width, height, xAxis, yAxis) {
     cChartDivTag = divTag;
@@ -52,7 +53,21 @@ countryChart.interactive = function() {
 
   function plotCountry(data, xScale, yScale) {
 
-    var countryData = data.filter(function(doc) {
+    if (xScale) {
+      cxScale = xScale;
+    }
+
+    if (!cxScale) { alert('Please select a Country first.')}
+
+    if (yScale) {
+      cyScale = yScale;
+    }
+
+    if (data) {
+      cData = data;
+    }
+
+    var countryData = cData.filter(function(doc) {
       return (doc.location_name == gState.cCountry && doc.age_group_id == gState.cAgeGroupId && doc.metric === 'obese')
     });
 
@@ -64,8 +79,8 @@ countryChart.interactive = function() {
 
     // line generator for each country line
     var lineGenerator = d3.svg.line()
-      .x(function(d) { return xScale(createDate(d.year)); })
-      .y(function(d) { return yScale(d.mean)});
+      .x(function(d) { return cxScale(createDate(d.year)); })
+      .y(function(d) { return cyScale(d.mean)});
 
     var male = countryData.filter(function(doc) {
       return doc.sex_id === '1'
@@ -82,8 +97,8 @@ countryChart.interactive = function() {
       .enter()
       .append('circle')
       .attr({
-        cx: function(d) { return xScale(createDate(d.year)) + padding;},
-        cy: function(d) {return yScale(d.mean) + padding;},
+        cx: function(d) { return cxScale(createDate(d.year)) + padding;},
+        cy: function(d) {return cyScale(d.mean) + padding;},
         r: 2,
         fill: 'steelblue'
       });
@@ -107,7 +122,7 @@ countryChart.interactive = function() {
 
         var text = lineGroup.append('text')
           .attr('x', (cWidth-padding*3))
-          .attr('y', (yScale(male[male.length-1].mean)+padding-15))
+          .attr('y', (cyScale(male[male.length-1].mean)+padding-15))
           .attr('dy', '.35em')
           .attr('text-anchor', 'start')
           .attr('class', 'countryline-label')
@@ -133,8 +148,8 @@ countryChart.interactive = function() {
           .enter()
           .append('circle')
           .attr({
-            cx: function(d) { return xScale(createDate(d.year)) + padding;},
-            cy: function(d) {return yScale(d.mean) + padding;},
+            cx: function(d) { return cxScale(createDate(d.year)) + padding;},
+            cy: function(d) {return cyScale(d.mean) + padding;},
             r: 2,
             fill: 'pink'
           });
@@ -158,7 +173,7 @@ countryChart.interactive = function() {
 
         var text = femaleLineGroup.append('text')
           .attr('x', (cWidth-padding*3))
-          .attr('y', (yScale(female[female.length-1].mean)+padding-15))
+          .attr('y', (cyScale(female[female.length-1].mean)+padding-15))
           .attr('dy', '.35em')
           .attr('text-anchor', 'start')
           .attr('class', 'countryline-label')

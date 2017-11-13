@@ -16,65 +16,67 @@
         <h1 class="text-center">IHME Global Burden of Disease Study 2013</h1>
         <h2 class="text-center">Obesity Prevalence 1990-2013 Data Explorer</h2>
       </div>
+        <div id="cover"><div>
+        <div class="container">
+          <div class="row">
+            <div class="col-sm">
+              <div id="region-buttons">
+                <button type="button" class="btn btn-primary">Africa</button>
+                <button type="button" class="btn btn-primary">Americas</button>
+                <button type="button" class="btn btn-primary">Asia</button>
+                <button type="button" class="btn btn-primary">Europe</button>
+                <button type="button" class="btn btn-primary">Oceania</button>
+              </div>
 
-      <div class="container">
-        <div class="row">
-          <div class="col-sm">
-            <div id="region-buttons">
-              <button type="button" class="btn btn-primary">Africa</button>
-              <button type="button" class="btn btn-primary">Americas</button>
-              <button type="button" class="btn btn-primary">Asia</button>
-              <button type="button" class="btn btn-primary">Europe</button>
-              <button type="button" class="btn btn-primary">Oceania</button>
+              <div class="regionchart"></div>
+              <div class = "regioninfo"><h3><p class="text-center"></p></h3></div>
+              <div class = "regiontext"><p class="text-center">Obesity Prevalence Rate vs. Year</p></div>
             </div>
 
-            <div class="regionchart"></div>
-            <div class = "regioninfo"><h3><p class="text-center"></p></h3></div>
-          </div>
+            <div class="col-sm">
+              <div>
+                <div class="dropdown div-inline">
+                  <button class="btn btn-secondary dropdown-toggle" type="button" id="countryDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Select Country
+                  </button>
+                  <div id="country-dropdown-menu" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#">sample</a>
 
-          <div class="col-sm">
-            <div>
-              <div class="dropdown div-inline">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="countryDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Select Country
-                </button>
-                <div id="country-dropdown-menu" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <a class="dropdown-item" href="#">sample</a>
-
+                  </div>
                 </div>
-              </div>
-              <div class="dropdown div-inline">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="ageDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Select Age Group
-                </button>
-                <div id="age-dropdown-menu" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <a class="dropdown-item" data-id = "34" href="#">2 to 4 yrs</a>
-                  <a class="dropdown-item" data-id = "36" href="#">2 to 19 yrs</a>
-                  <a class="dropdown-item" data-id = "6" href="#">5 to 9 yrs</a>
-                  <a class="dropdown-item" data-id = "7" href="#">10 to 14 yrs</a>
-                  <a class="dropdown-item" data-id = "8" href="#">15 to 19 yrs</a>
-                  <a class="dropdown-item" data-id = "9" href="#">20 to 24 yrs</a>
-                  <a class="dropdown-item" data-id = "38" href="#">20+ yrs, age standardized</a>
-                  <a class="dropdown-item" data-id = "10" href="#">25 to 29 yrs</a>
-                  <a class="dropdown-item" data-id = "11" href="#">30 to 34 yrs</a>
-                  <a class="dropdown-item" data-id = "12" href="#">35 to 39 yrs</a>
-                  <a class="dropdown-item" data-id = "13" href="#">40 to 44 yrs</a>
-                  <a class="dropdown-item" data-id = "14" href="#">45 to 49 yrs</a>
-                  <a class="dropdown-item" data-id = "15" href="#">50 to 54 yrs</a>
-                  <a class="dropdown-item" data-id = "16" href="#">55 to 59 yrs</a>
-                  <a class="dropdown-item" data-id = "17" href="#">60 to 64 yrs</a>
-                  <a class="dropdown-item" data-id = "18" href="#">65 to 69 yrs</a>
-                  <a class="dropdown-item" data-id = "19" href="#">70 to 74 yrs</a>
-                  <a class="dropdown-item" data-id = "20" href="#">75 to 79 yrs</a>
-                  <a class="dropdown-item" data-id = "21" href="#">80+ yrs</a>
+                <div class="dropdown div-inline">
+                  <button class="btn btn-secondary dropdown-toggle" type="button" id="ageDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Select Age Group
+                  </button>
+                  <div id="age-dropdown-menu" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item age-dropdown" data-id = "34" href="#">2 to 4 yrs</a>
+                    <a class="dropdown-item age-dropdown" data-id = "6" href="#">5 to 9 yrs</a>
+                    <a class="dropdown-item age-dropdown" data-id = "7" href="#">10 to 14 yrs</a>
+                    <a class="dropdown-item age-dropdown" data-id = "8" href="#">15 to 19 yrs</a>
+                    <a class="dropdown-item age-dropdown" data-id = "9" href="#">20 to 24 yrs</a>
+                    <a class="dropdown-item age-dropdown" data-id = "36" href="#">2 to 19 yrs</a>
+                    <a class="dropdown-item age-dropdown" data-id = "38" href="#">20+ yrs, age standardized</a>
+                    <a class="dropdown-item age-dropdown" data-id = "10" href="#">25 to 29 yrs</a>
+                    <a class="dropdown-item age-dropdown" data-id = "11" href="#">30 to 34 yrs</a>
+                    <a class="dropdown-item age-dropdown" data-id = "12" href="#">35 to 39 yrs</a>
+                    <a class="dropdown-item age-dropdown" data-id = "13" href="#">40 to 44 yrs</a>
+                    <a class="dropdown-item age-dropdown" data-id = "14" href="#">45 to 49 yrs</a>
+                    <a class="dropdown-item age-dropdown" data-id = "15" href="#">50 to 54 yrs</a>
+                    <a class="dropdown-item age-dropdown" data-id = "16" href="#">55 to 59 yrs</a>
+                    <a class="dropdown-item age-dropdown" data-id = "17" href="#">60 to 64 yrs</a>
+                    <a class="dropdown-item age-dropdown" data-id = "18" href="#">65 to 69 yrs</a>
+                    <a class="dropdown-item age-dropdown" data-id = "19" href="#">70 to 74 yrs</a>
+                    <a class="dropdown-item age-dropdown" data-id = "20" href="#">75 to 79 yrs</a>
+                    <a class="dropdown-item age-dropdown" data-id = "21" href="#">80+ yrs</a>
+                  </div>
                 </div>
-              </div>
-              </div>
-            <div class ="countrychart"></div>
-            <div class = "countryinfo"><h3><p class="text-center"></p></h3></div>
+                </div>
+              <div class ="countrychart"></div>
+              <div class = "countryinfo"><h3><p class="text-center"></p></h3></div>
+              <div class = "ageinfo"><p class="text-center">20+ yrs, age standardized</p></div>
+            </div>
           </div>
         </div>
-      </div>
     </div>
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

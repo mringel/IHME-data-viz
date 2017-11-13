@@ -84,6 +84,7 @@ mainChart.interactive = function() {
       d3.selectAll("path.domain").style("fill", "none").style("stroke", "black");
       d3.selectAll("line").style("stroke", "black");
 
+      // Initailize chart with Americas
       plotSelectedRegion('Americas');
 
       var bodyWidth = document.getElementById('page-content').offsetWidth;
@@ -112,6 +113,7 @@ mainChart.interactive = function() {
 
     countries = new Set(subset.map(function(x) {return x.location_name;}));
 
+    // get ready to add each coutry in region to country dropdown
     var list = document.getElementById("country-dropdown-menu");
 
     //iterate through all countries and draw a line and label for each
@@ -181,6 +183,7 @@ mainChart.interactive = function() {
         //update country dropdown
         var link = document.createElement("a");
         link.className = 'dropdown-item';
+        link.className += " country-dropdown";
         var text = document.createTextNode(country);
         link.appendChild(text);
         link.href = "#";
@@ -216,10 +219,9 @@ mainChart.interactive = function() {
         .attr('stroke-width', 1.5);
     });
 
-    $('.dropdown-item').click(function(e) {
+    $('.country-dropdown').click(function(e) {
         e.preventDefault();
         var name = e.currentTarget;
-        console.dir(name.innerText);
         gState.cCountry = name.innerText;
         countryChart.plotCountry(allData, xScale, yScale);
     });
